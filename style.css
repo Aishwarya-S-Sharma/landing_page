@@ -1,0 +1,1186 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Prevents any horizontal scrolling */
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --background-color:#FBFBFB;
+    --green-background-color:#153E52;
+    --dark-green-color:#113448;
+    --light-green-color:#14BF98;
+    --dark-gray-color:#484A46;
+    --light-gray-color:#787976;
+    --white:#FFFFFF;
+    --disabled-color:#E9ECEF;
+    --dark-white-color:#DFE5EC;
+    --light-gray-border-colour:#EBE8E8;
+    --image-contrast:60%;
+    --image-grayscale:50%;
+    --form-bg-color:#2A5D77;
+    --form-input-border-color:#39728F;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    
+}
+
+h1,h2,h3,h4,h5,h6,p,a,li,input,select,textarea,option,span,button,label{
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height:auto;
+    width: 100%;
+    padding: 1rem 3rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+    color: var(--white);
+    align-items: center;
+    z-index: 100;
+    background-color: var(--dark-green-color);
+}
+
+nav img{
+    height: 2rem;
+}
+
+nav a{
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.125s ease-in-out;
+}
+
+nav a:visited{
+    color: var(--white);  
+}
+
+nav a:hover{
+    color: var(--light-green-color);
+}
+
+nav ul{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+nav ul .icon{
+    background-color: var(--light-green-color);
+    padding: 0.75rem;
+    cursor: pointer;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+nav ul .icon:hover{
+    background-color: var(--white);
+    padding: 0.75rem;
+}
+
+nav ul .icon:hover a{
+    color: var(--light-green-color);
+}
+
+nav .mobile-menu{
+    display: none;
+}
+
+button{
+    background-color: var(--light-green-color);
+    color: var(--white);
+    border: none;
+    text-transform: uppercase;
+    padding: 1rem 1.685rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.35s ease-in-out;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.1ch;
+}
+
+ button:hover{
+    background-color: transparent;
+    border: 2px solid #14BF98;
+    color: var(--light-green-color);
+    
+}
+
+.section-title{
+    color: var(--light-green-color);
+    text-transform: uppercase;
+    padding: 2rem 0;
+}
+
+.italic{
+    font-style: italic;
+}
+
+.under{
+    text-decoration: underline;
+}
+
+.home{
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.5)),url('./assets/home.jpg');
+    background-size: cover;
+    background-position:center;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: large;
+    color: var(--white);
+    gap: 1rem;
+    overflow: hidden;
+}
+
+.home h1{
+    text-transform: uppercase;
+    font-size: 3rem;
+    padding: 0.5rem 0;
+}
+
+.home p{
+    font-size: 1rem;
+    width: 50%;
+    padding-bottom: 2rem;
+}
+
+.intro{
+    padding: 6rem 15vw;
+    background-color: var(--white);
+}
+
+.intro .content{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.intro .content text{
+    width: 40%;
+    flex-shrink: 0;
+    padding-right: 2rem;
+    box-sizing: border-box;
+    line-height: 2rem;
+}
+
+.intro .content .text h3{
+    color: var(--dark-gray-color);
+    font-size: 2rem;
+}
+
+.intro .content .text p{
+    color: var(--light-gray-color);
+    font-weight: 400;
+}
+
+.intro .content .image-container{
+    width: 60%;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 3px;
+    filter: grayscale(25%);
+    cursor: pointer;
+}
+
+.intro .content img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+    transition: transform 0.35s ease-in-out;  
+}
+
+.intro .content .image-container img:hover{
+    transform: scale(1.35);
+}
+
+.intro .skill-list-container{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 5rem;
+    margin-top: 5rem;
+}
+
+.intro .skill-list-container .skill-item{
+    width: 30%;
+    line-height: 1.5rem;
+}
+
+.intro .skill-list-container .skill-item span{
+    background-color: var(--light-green-color);
+    color: var(--white);
+    padding: 1.5rem;
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    clip-path: polygon(0 25%,0 75%,50% 100%,100% 75%,100% 25%,50% 0);
+}
+
+.greentext{
+    color: #14BF98;
+}
+
+.intro .skill-list-container .skill-item h4{
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    color: var(--dark-gray-color);
+}
+
+.intro .skill-list-container .skill-item p{
+    color: var(--light-gray-color);
+}
+
+.services{
+    padding: 5rem 0;
+}
+
+.services>span{
+    display: block;
+    text-align: center;
+}
+
+.services>h2{
+    font-size: 1.75rem;
+    color: var(--dark-gray-color);
+    text-align: center;
+}
+
+.services .service-list-container{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 3rem 20vw;
+    align-items: start;
+}
+
+.services .service-list-container .service-item{
+    width: 30%;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid var(--light-gray-border-color);
+    border-radius: 5px;
+    background-color: var(--white);
+}
+
+.services .service-item img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px 5px 0 0;
+    
+}
+
+.services .service-item h3{
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--dark-gray-color);
+    padding: 0.5rem 2rem;
+}
+
+.services .service-item p{
+    line-height: 1.5rem;
+    color: var(--light-gray-color);
+    padding: 0.5rem 2rem;
+}
+
+/* Alternative using ::before */
+.services .service-item ul {
+    line-height: 1.5rem;
+    color: var(--light-gray-color);
+    padding: 0.5rem 2rem;
+    list-style-type: none; /* Remove default bullets */
+}
+
+.services .service-item ul li::before {
+    content: "■"; /* Unicode for square bullet */
+    color: var(--light-green-color);
+    margin-right: 8px;
+    font-size: 1.25rem;
+}
+
+.services .service-item h4{
+    font-size: 1rem;
+    color: var(--dark-gray-color);
+    text-align: center;
+    padding: 0.5rem 2rem;
+}
+.services .service-item h4 .price{
+    color: var(--light-green-color);
+}
+
+.services .service-item button{
+    position: relative;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%,50%);
+}
+
+.services .service-item  button:hover{
+    background-color: var(--white);
+}
+
+.services .propositions{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--white);
+}
+
+.services .propositions img{
+    width: 50%;
+    height: 35rem;
+    min-height: 35rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.services .propositions .content{
+    width: 50%;
+    flex-shrink: 0;
+    box-sizing: border-box; 
+}
+
+.services .propositions-1 .content{
+ padding: 5rem 20vw 5rem 5rem; 
+
+}
+
+.sevices .propositions-1 h4{
+    color: var(--dark-gray-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.125s ease-in-out;
+}
+
+.services .propositions-1  h4.active,
+.services .propositions-1  h4:hover{
+    color: var(--light-green-color);
+}
+
+.services .propositions-1 h4 span {
+    border: 2px solid var(--dark-gray-color); /* Border color */
+    border-radius: 50%; /* Make the span circular */
+    padding: 0 0.65rem; /* Padding around the number */
+    margin-right: 1rem; /* Space between the number and text */
+    color: var(--dark-gray-color); /* Default color for numbers */
+    transition: color 0.125s ease-in-out; /* Smooth transition for color change */
+}
+
+/* Change border color and text color on hover over the h4 */
+.services .propositions-1 h4:hover span {
+    border-color: var(--light-green-color); /* Change border color on hover */
+    color: var(--light-green-color); /* Change number color on hover */
+}
+
+/* Ensure the active h4 has a different color for its span */
+.services .propositions-1 h4.active span {
+    color: var(--white); /* Change color for active state */
+    background-color: var(--light-green-color);
+    border-color: var(--light-green-color); /* Change border color for active state */
+}
+
+.services .propositions-1 h4:not(.active):hover span {
+    color: var(--light-green-color); /* Change color for active state */
+    border-color: var(--light-green-color); /* Change border color for active state */
+}
+
+.services .propositions-2 .content{
+    padding: 5rem 5rem 5rem 20vw; 
+}
+
+.services .propositions h3, .services .propositions h4{
+    font-size: 1.25rem;
+    color: var(--dark-gray-color);
+}
+
+
+
+.services .propositions p{
+    line-height: 1.5rem;
+    color: var(--light-gray-color);
+}
+
+.services .propositions-2 .category-list-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem; /* Space between category items */
+}
+
+.services .propositions-2 .category-item {
+    color: var(--light-gray-color);
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+.services .propositions-2 .category-item  h3{
+    color: var(--light-gray-color);
+    transition: color 0.125s ease-in-out;
+    cursor: pointer;
+}
+.services .propositions-2 .category-item.active , .services .propositions-2 .category-item:hover {
+    color: var(--light-green-color);
+}
+
+
+.services .propositions-2 .category-item.active h3, .services .propositions-2 .category-item:hover h3 {
+    color: var(--light-green-color);
+}
+
+.services .category-list-container {
+    margin-bottom: 1.5rem;
+}
+
+.services .testimonials{
+    padding: 5rem 20vw;
+}
+
+.services .testimonials h3{
+    font-size: 1.75rem;
+    color: var(--dark-gray-color);
+    text-align: center;
+}
+
+.services .testimonials h4{
+    color: var(--dark-gray-color);
+    text-align: center;
+}
+
+.services .testimonials p{
+    line-height: 1.5rem;
+    color: var(--light-gray-color);
+    text-align: center;
+}
+
+.services .testimonial-list-container{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    overflow-x: scroll;
+    padding: 3rem 0;
+}
+
+.services .testimonial-list-container .testimonial-item{
+    width: 25%;
+    flex-shrink: 0;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    flex-grow: 0;
+}
+
+.services .testimonial-list-container .testimonial-item img{
+    width: 6rem;
+    height: 6rem;
+    margin-right: auto;
+    margin-bottom: 0.25rem;
+    margin-left: auto;
+    border-radius: 50%;
+}
+
+.services .testimonial-list-container .testimonial-item p{
+    line-height: 1.5em;
+}
+
+
+.services .skill-list-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 3rem 0;
+}
+
+.services .skill-list-container .skill-item .progress-bar{
+    width: 100%;
+    margin-top: 0.3rem;
+    height: 1.5rem;
+    border-radius: 2px;
+    background-color: var(--light-green-color);
+}
+
+.services .skill-list-container .skill-item .progress-bar.p-76{
+    width: 76%; 
+}
+
+.services .skill-list-container .skill-item .progress-bar.p-90{
+    width: 90%; 
+}
+
+.services .skill-list-container .skill-item h5{
+    color: var(--dark-gray-color);
+    font-size: 1rem;
+}
+
+.call_me{
+    padding: 5rem 20vw;
+    display: flex; 
+    flex-direction: row;
+    background-color: var(--green-background-color);
+    justify-content: space-between;
+}
+
+.call_me .content, .call_me .form{
+    width: 45%;
+    flex-shrink: 0;
+    flex-grow: 0;
+    color: var(--white);
+    
+}
+
+.call_me .content h3{
+    font-size: 1.75rem;
+}
+
+.call_me .content p{
+    line-height: 1.5rem;
+    
+    color: var(--light-gray-border-colour);
+}
+.call_me ul{
+    list-style-type: none;
+    padding: 0;
+    font-size: 0.85rem;
+}
+
+.call_me ul li::before{
+    content: "■"; /* Unicode for square bullet */
+    color: var(--light-green-color);
+    margin-right: 8px;
+ font-size: 1.25rem;
+}
+
+.call_me form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.call_me form .terms-container label{
+    color: var(--light-gray-border-color);
+
+}
+
+.call_me form input ,input[placeholder-shown] ,select{
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--form-input-border-colour);
+    background-color: var(--form-bg-color);
+    color: var(--white);
+}
+
+.projects{
+    padding: 5rem 20vw;
+    background-color: var(--white);
+    
+}
+.projects > span, .projects>h3{
+    display: block;
+    text-align: center;
+}
+
+.projects>h3{
+    color: var(--dark-gray-color);
+}
+
+.projects .category-list-container ul {
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 3rem 0 1rem;
+}
+
+
+.projects .category-list-container ul li {
+    font-weight: 700;
+    font-size: 0.85rem;  
+    color: var(--dark-gray-color);  
+    padding: 0.25rem 0.75rem;
+    border: 0.5px solid transparent;
+    border-radius: 5px;
+}
+
+.projects .category-list-container ul li:hover{
+    background-color: var(--light-green-color);
+    color: var(--white);
+}
+
+.projects .category-list-container ul li.active{
+    background-color: var(--light-green-color);
+    color: var(--white);
+}
+
+
+.projects .project-list-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin-bottom: 3rem 0;
+
+}
+
+.projects .project-list-container .project-item {
+    aspect-ratio: 1 / 1; /* Makes each item a square */
+    background-size: contain; 
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+.projects .project-list-container .project-item:hover{
+    transform: scale(1.2);
+}
+
+.projects .project-item.p-1 {
+    background-image: url('./assets/project-1.jpg');
+}
+
+.projects .project-item.p-2 {
+    background-image: url('./assets/project-2.jpg');
+}
+
+.projects .project-item.p-3 {
+    background-image: url('./assets/project-3.jpg');
+}
+
+.projects .project-item.p-4 {
+    background-image: url('./assets/project-4.jpg');
+}
+
+.projects .project-item.p-5 {
+    background-image: url('./assets/project-5.jpg');
+}
+
+.projects .project-item.p-6 {
+    background-image: url('./assets/project-6.jpg');
+}
+
+.projects .project-item.p-7 {
+    background-image: url('./assets/project-7.jpg');
+}
+
+.projects .project-item.p-8 {
+    background-image: url('./assets/project-8.jpg');
+}
+
+.team{
+    padding: 5rem 20vw;
+    background-color: var(--background-color);
+}
+
+.team > h2{
+    color: var(--dark-gray-color);
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.team > p{
+    line-height: 1.5rem;
+    color: var(--light-gray-color);
+    text-align: center;
+}
+
+.team-member-list-container {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    justify-content: space-between;
+    padding: 3rem 0;
+}
+
+.team .team-member-list-container .team-member-list-item{
+    width: 20%;
+    flex-shrink: 0;
+    flex-grow: 0;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-member-list-item img {
+    width: 100%;
+    max-width: 200px; /* Set a fixed max width */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for zoom effect */
+    cursor: pointer; /* Make it clear that the image is clickable */
+    border-radius: 10px; /* Optional: add some rounding to the image corners */
+}
+
+/* Optionally add zoom on hover */
+.team-member-list-item img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.team-member-list-item>p{
+    color: var(--dark-gray-color);
+    font: 400 1.125rem / 1.625rem "Open Sans", sans-serif;
+
+}
+
+.team-member-list-item >h4{
+    color: var(--dark-gray-color);
+  
+}
+
+
+.social-links i{
+    background-color: var(--light-green-color);
+    padding: 0.75rem;
+    cursor: pointer;
+    gap: 1rem; 
+    color: var(--white);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.social-links i:hover{
+    background-color: var(--white);
+    padding: 0.75rem;
+    color: var(--light-green-color);
+}
+
+
+.about{
+    padding:3rem 20vw;
+    background-color: var(--white);
+    display: flex;
+}
+
+.about > img{
+width: 50%;
+flex-grow: 0;
+border-radius: 5px;
+flex-shrink: 0;
+/* padding-left: 3rem; */
+}
+
+.about .content{
+    width: 50%;
+flex-grow: 0;
+flex-shrink: 0;
+padding-left: 3rem;
+}
+
+.about .content >h2{
+    color: var(--dark-gray-color);
+   font-size: 1.75rem;
+}
+
+.about .content >p{
+    color: var(--light-gray-color);
+    line-height: 1.5em;
+}
+
+
+/* Alternative using ::before */
+.about .content ul {
+    line-height: 1.5rem;
+    color: var(--light-gray-color);
+    padding: 0.5rem 2rem;
+    list-style-type: none; /* Remove default bullets */
+}
+
+.about .content ul li::before {
+    content: "■"; /* Unicode for square bullet */
+    color: var(--light-green-color);
+    margin-right: 8px;
+    font-size: 1.25rem;
+} 
+
+.about .content .stats-list-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about .content .stats-list-container .stat-item{
+    width: 30%;
+    flex-shrink: 0;
+    flex-grow: 0;
+    display: flex;
+
+    flex-direction: row;
+    color: var(--light-gray-color);
+    align-items: center;
+}
+
+.about .content .stats-list-container .stat-item .num{
+    color: var(--light-green-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding-right: 0.5rem;
+}
+
+.contact{
+    padding:5rem 20vw;
+    background-color: var(--white);
+    display: flex;
+}
+
+.contact .content{
+    width: 50%;
+flex-grow: 0;
+flex-shrink: 0;
+}
+
+.contact .content > h3{
+    color: var(--dark-gray-color);
+    font-size: 1.75rem;
+    padding:1rem 0;
+}
+
+.contact .content > p{
+    color: var(--light-gray-color);
+    line-height: 1.5em;
+    padding: 1rem 0;
+}
+
+
+.contact .contact-info-list-container{
+    display: flex;
+    flex-direction: column;
+    color: var(--light-gray-color);
+}
+
+.contact .content .phone-info{
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: row;
+    color: var(--light-gray-color);
+}
+
+.contact .content i{
+    color: var(--light-green-color);
+}
+.contact .social-link-list-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.contact .social-link-list-container .social-link-item span i {
+    background-color: var(--light-green-color);
+    padding: 1rem 1rem;
+    cursor: pointer;
+    color: var(--white); /* Icon color */
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); /* Hexagonal shape */
+    transition: all 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for social link icons */
+.contact .social-link-list-container .social-link-item span i:hover {
+    background-color: var(--white); /* White background */
+    color: var(--light-green-color); /* Green icon color */
+}
+
+/* Container for the form */
+.contact.form {
+    display: flex;
+    justify-content: center; /* Centers the form horizontally */
+    padding: 2rem; /* Adds padding around the form */
+}
+
+/* Styling for the form element */
+.contact form {
+    display: flex;
+    flex-direction: column; /* Arranges form fields vertically */
+    gap: 1rem; /* Adds space between each form field */
+    width: 100%;
+    max-width: 500px; /* Limits the maximum width of the form */
+    padding: 2rem;
+    background-color: #f9f9f9; /* Light background for form */
+    border-radius: 10px; /* Rounded corners */
+    border: 1px solid var(--form-input-border-colour); /* Light border for the form */
+}
+
+/* Input fields and textarea styling */
+.contact form input[type="text"],
+.contact form textarea,
+.contact form select {
+    padding: 1rem;
+    border-radius: 5px; /* Rounded corners for input fields */
+    border: 1px solid var(--form-input-border-colour); /* Border color */
+    /* background-color: var(--form-bg-color); Background color variable */
+    color: var(--white); /* Text color */
+    font-size: 1rem;
+}
+
+/* Textarea field specific styles */
+.contact form textarea {
+    resize: none; /* Prevents resizing by the user */
+    height: 150px; /* Set fixed height for the textarea */
+}
+
+/* Styling for the label within the terms-container */
+.contact form .terms-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Aligns checkbox and label in line */
+    gap: 0.5rem; /* Adds space between checkbox and label */
+}
+
+.contact form .terms-container label {
+    color: var(--light-gray-color); /* Color for the label text */
+    font-size: 0.9rem; /* Slightly smaller text for label */
+}
+
+
+/* Lighter border when input fields are focused */
+.contact form input[type="text"]:focus,
+.contact form textarea:focus,
+.contact form select:focus {
+    border-color: var(--light-gray-color); /* Apply lighter border color on focus */
+    border: 0.5px solid var(--light-gray-color);
+    outline: none; /* Remove the default browser outline */
+}
+
+footer{
+    background-color: var(--dark-green-color);
+    color: var(--white);
+    padding: 5rem 20vw;
+    
+}
+
+footer .footer-list-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+footer .footer-list-container .footer-list-item.wide{
+width: 50%;
+flex-shrink:0;
+flex-grow:0;
+} 
+
+footer .footer-list-container h2{
+    color: var(--white);
+    font-size: 1.5rem;
+    line-height: 1.3rem;
+}
+
+footer p{
+    color: var(--white);
+    font-size: 0.9rem;
+    line-height: 1.5rem;  
+}
+
+footer a{
+    color: var(--white);
+    line-height:2rem;
+    font-size: 0.9rem;
+    display: block;
+}
+
+footer a:visited{
+ color: var(--white);
+ line-height: 2rem;
+ font-size: 0.9rem;
+}
+
+
+footer .copyright{
+    padding-top: 3rem;
+    text-align: center;
+}
+
+
+/* Responsive design */
+@media  screen and (max-width: 950px) {
+    .services .service-list-container .service-item{
+        width: 100%;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+
+    .services .service-list-container{
+        flex-direction: column;
+        gap: 5rem;
+    }
+
+    
+    .about .content .stats-list-container .stat-item{
+        flex-wrap: wrap;
+    }
+
+}
+@media only screen and (max-width: 900px) {
+
+    .home {
+        width: 100vw; /* Ensure it occupies full viewport width */
+    }
+
+    nav ul{
+        display: none;
+    }
+
+    nav .mobile-menu{
+        display: initial;
+    }
+
+    .intro .content, .intro .skill-list-container {
+        flex-wrap: wrap;
+    }
+
+    .intro .content .text,.intro .content .image-container{
+        width: 100%;
+        padding: 0;
+    }
+
+    .intro .context .text, .intro .content .image-container, .intro .skill-list-container .skill-item{
+        width: 100%;
+        padding: 0;
+    }
+    
+    .intro .skill-list-container .skill-item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 1rem 0;
+    }
+
+    .services .testimonial-item{
+        width: 40%;
+    }
+
+    .services .propositions{
+        width: 100%;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .services .propositions.propositions-2{
+        width: 100%;
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+
+    
+    .services .propositions-1 .content, .services .propositions-2 .content{
+        padding: 5rem;
+    }
+
+    .services .propositions img, .services .propositions .content{
+        width: 100%;
+    
+    }
+
+
+
+    .call_me .content , .call_me .form{
+        width: 100%;
+    }
+
+    .call_me{
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+
+    .projects .project-list-container{
+        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .team{
+        width: 100%;
+        gap: 3rem;
+    }
+    .team .team-member-list-container .team-member-list-item{
+        width: 100%;
+        padding: 0;
+    }
+    .team .team-member-list-container{
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .about>img, .about>.content{
+        width: 100%;
+        height: auto;
+    }
+    .about {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+   .contact .content, .contact .form{
+    width: 100%;
+   }
+
+   .contact{
+    flex-direction: column;
+    gap: 3rem;
+ 
+   }
+ footer .footer-list-container{
+    flex-wrap: wrap;
+    
+   justify-content: space-between;
+   } 
+
+   footer .footer-list-container .footer-list-item.wide{
+    width: 100%;
+    flex-shrink:0;
+    flex-grow:0;
+   }
+
+   footer .footer-list-container .footer-list-item{
+    width: 25%;
+    flex-shrink:0;
+    flex-grow:0;
+   }
+
+
+}
+
+@media only screen and (max-width: 650px) {
+    footer .footer-list-container .footer-list-item{
+        width: 100%;
+        flex-shrink:0;
+        flex-grow:0;
+       }
+    
+
+}
+
+
+@media only screen and (max-width: 600px) {
+    .services .testimonial-item{
+        width: 60%;
+    }
+
+}
